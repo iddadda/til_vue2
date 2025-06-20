@@ -25,7 +25,7 @@ const fruitList = ["사과", "바나나", "딸기", "배"];
   <input type="password" placeholder="비밀번호" :readonly="loading" />
   <button :disabled="loading">로그인</button>
   <ul :class="parent">
-    <li :key="item" v-for="item in fruitList" :class="child">
+    <li :key="idx" v-for="(item, idx) in fruitList" :class="child">
       {{ item }}
     </li>
   </ul>
