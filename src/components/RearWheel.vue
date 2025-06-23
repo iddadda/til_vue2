@@ -1,11 +1,15 @@
 <script setup>
 import TireVue from "./Tire.vue";
+import { useCounterStore } from "@/stores/counter.js";
+
+const counterStore = useCounterStore();
 </script>
 
 <template>
   <div class="rear-wheel">
     <span>REAR WHEEL</span>
     <TireVue color="Green" />
+    <div>Times: {{ counterStore.count }}</div>
   </div>
 </template>
 

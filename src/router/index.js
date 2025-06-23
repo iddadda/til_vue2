@@ -4,6 +4,8 @@ import Mustache from "@/views/Mustache.vue";
 import Chapter3 from "@/views/Chapter3.vue";
 import Chapter4 from "@/views/Chapter4.vue";
 import Chapter5 from "@/views/Chapter5.vue";
+import { ssrImportKey } from "vite/runtime";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -26,6 +28,18 @@ const router = createRouter({
     {
       path: "/chapter5",
       component: Chapter5,
+    },
+    {
+      path: "/chapter6",
+      component: () => import("@/views/Chapter6.vue"),
+    },
+    {
+      path: "/chapter7",
+      component: () => import("@/views/Chapter7.vue"),
+    },
+    {
+      path: "/chapter8",
+      component: () => import("@/views/Chapter8.vue"),
     },
   ],
 });
